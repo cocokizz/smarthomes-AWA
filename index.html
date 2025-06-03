@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Big-Data-Strategie: Autonomes Wohnen im Alter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome CDN für Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #3178c6;
+      --secondary: #61a5c2;
+      --light-bg: #f8fafc;
+      --accent-bg: #e3f4fd;
+      --card-bg: #fff;
+      --radius: 1.2rem;
+      --shadow: 0 2px 12px rgba(49,120,198,0.07);
+    }
+    body {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      background: var(--light-bg);
+      margin: 0;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+      color: #fff;
+      padding: 2.5rem 1rem 2rem 1rem;
+      border-radius: 0 0 var(--radius) var(--radius);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    header .main-icon {
+      font-size: 3.2rem;
+      background: #1a4c7c;
+      padding: 1.5rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 2px 12px #1a4c7c33;
+    }
+    header h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+    header p {
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 500;
+    }
+    .hero {
+      max-width: 900px;
+      margin: 2.5rem auto 2rem auto;
+      background: var(--accent-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .hero .hero-icon {
+      font-size: 4.5rem;
+      color: var(--primary);
+      background: #fff;
+      border-radius: 2rem;
+      padding: 2rem;
+      box-shadow: 0 2px 12px #61a5c233;
+    }
+    section {
+      max-width: 1100px;
+      margin: 2.5rem auto;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+    }
+    section.alt {
+      background: linear-gradient(90deg, var(--accent-bg) 0%, var(--card-bg) 100%);
+    }
+    h2 {
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: .5em;
+      margin-top: 0;
+      color: var(--primary);
+    }
+    h3 {
+      font-size: 1.13rem;
+      margin-bottom: .5em;
+      margin-top: 1.5em;
+      color: var(--secondary);
+    }
+    ul, ol {
+      margin-top: 0.3em;
+      margin-bottom: 1.3em;
+      padding-left: 1.3em;
+    }
+    li {
+      margin-bottom: .35em;
+      line-height: 1.5em;
+    }
+    .icon {
+      color: var(--primary);
+      margin-right: .35em;
+    }
+    .highlight {
+      background: #61a5c21a;
+      border-left: 5px solid var(--primary);
+      padding: .8em 1.2em;
+      font-size: 1.07rem;
+      margin: 1.2em 0 .7em 0;
+      border-radius: .6em;
+      color: #1a4c7c;
+      font-weight: 500;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 1.2rem;
+    }
+    .tech-icons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 1.5rem;
+    }
+    .tech-icons h4 {
+      margin: 0.4em 0 0.25em 0;
+      color: var(--primary);
+      font-size:1.1rem;
+    }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      .hero { flex-direction: column; align-items: flex-start; }
+    }
+    footer {
+      background: var(--accent-bg);
+      text-align: center;
+      padding: 2rem 1rem 1.5rem 1rem;
+      font-size: 1.09rem;
+      color: var(--primary);
+      border-radius: var(--radius) var(--radius) 0 0;
+      margin-top: 3rem;
+    }
+    /* Scrollbar styling for modern look */
+    ::-webkit-scrollbar {
+      width: 8px;
+      background: #e3f4fd;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cce4f6;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <span class="main-icon"><i class="fa-solid fa-network-wired"></i></span>
+    <div>
+      <h1>Big-Data-Strategie für autonomes Wohnen im Alter</h1>
+      <p><strong>Zentrale IoT-Datenplattform für Sicherheit, Unterstützung & KI-Analyse im Smart Home älterer Menschen.</strong></p>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="hero-icon"><i class="fa-solid fa-house-chimney"></i></span>
+    <div>
+      <h2><i class="fa-solid fa-brain icon"></i> Szenario</h2>
+      <p>
+        Entwicklung einer zentralen Plattform, die sämtliche IoT-Daten aus Smart Homes älterer Menschen sammelt, verarbeitet und analysiert, um unterstützende, schützende und überwachende KI-Dienste bereitzustellen und das Nutzererlebnis für Bewohner, Angehörige und Pflegedienste zu optimieren.
+      </p>
+    </div>
+  </div>
+
+  <!-- Marktanalyse -->
+  <section>
+    <h2><i class="fa-solid fa-chart-line icon"></i> Marktanalyse & Schlüsseltrends</h2>
+    <div class="grid">
+      <div>
+        <h3>Wichtige Trends im Datenstreaming:</h3>
+        <ul>
+          <li><i class="fa-solid fa-bolt icon"></i> Echtzeitverarbeitung: Sofortige Reaktion, z.B. bei Notfällen.</li>
+          <li><i class="fa-solid fa-cloud icon"></i> Edge Computing: Datenverarbeitung nahe an der Quelle für Datenschutz & geringe Latenz.</li>
+          <li><i class="fa-solid fa-layer-group icon"></i> Skalierbarkeit: Verarbeitung riesiger Sensordatenmengen.</li>
+          <li><i class="fa-solid fa-robot icon"></i> KI-Integration: Machine Learning für Mustererkennung & Prognosen.</li>
+          <li><i class="fa-solid fa-code-branch icon"></i> Interoperabilität: Offene Standards & APIs.</li>
+          <li><i class="fa-solid fa-shield-halved icon"></i> Datenschutz & Sicherheit by Design.</li>
+          <li><i class="fa-solid fa-cloud-arrow-up icon"></i> Hybrid-Cloud-Ansätze: Cloud & On-Premise kombiniert.</li>
+          <li><i class="fa-solid fa-cube icon"></i> Microservices-Architekturen: Agile, resiliente Systeme.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Branchenbezüge & Relevanz:</h3>
+        <ul>
+          <li><i class="fa-solid fa-microchip icon"></i> IoT: Sensordaten-Streaming als Kern.</li>
+          <li><i class="fa-solid fa-heart-pulse icon"></i> Gesundheitswesen: Echtzeitüberwachung & personalisierte Dienste.</li>
+          <li><i class="fa-solid fa-users icon"></i> Soziale Medien: Personalisierte Empfehlungen.</li>
+          <li><i class="fa-solid fa-euro-sign icon"></i> Finanzwesen: Echtzeit-Anomalieerkennung.</li>
+          <li><i class="fa-solid fa-industry icon"></i> Industrie 4.0: Predictive Maintenance, Parallelen zur Gesundheitsüberwachung.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="highlight">
+      Echtzeitdaten sind der Schlüssel zu Sicherheit & proaktiver Unterstützung beim autonomen Wohnen im Alter.
+    </div>
+  </section>
+
+  <!-- Datenquellen & Architektur -->
+  <section class="alt">
+    <h2><i class="fa-solid fa-database icon"></i> Datenquellen & Datenarchitektur</h2>
+    <div class="grid">
+      <div>
+        <h3>Integrierte Datenquellen:</h3>
+        <ul>
+          <li><i class="fa-solid fa-person-walking icon"></i> Sensordaten: Bewegung, Türen, Umweltsensoren, Druck, Wasser</li>
+          <li><i class="fa-solid fa-heart-pulse icon"></i> Gesundheitsdaten: Wearables, medizinische Geräte, Medikamenten-Dispenser</li>
+          <li><i class="fa-solid fa-tablet-alt icon"></i> Nutzerinteraktionen: App-Nutzung, Notrufe</li>
+          <li><i class="fa-solid fa-id-card icon"></i> Kontextdaten: Bewohnerprofile, Grundriss, Kontaktdaten, Medikationspläne</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Architektur-Übersicht:</h3>
+        <ol>
+          <li><i class="fa-solid fa-microchip icon"></i> Edge/Gateway: Datenerfassung, Vorverarbeitung, Anonymisierung</li>
+          <li><i class="fa-brands fa-kickstarter icon"></i> Datenaufnahme: Messaging-Queues (z.B. Kafka)</li>
+          <li><i class="fa-solid fa-gears icon"></i> Verarbeitung: Echtzeit-Streaming-Engines</li>
+          <li><i class="fa-solid fa-database icon"></i> Speicherung: NoSQL (Hot), Data Lakes (Cold), Data Warehouse</li>
+          <li><i class="fa-solid fa-bell icon"></i> Ausgabe & API: APIs, Dashboards, Benachrichtigungssysteme</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Echtzeit-Optimierung -->
+  <section>
+    <h2><i class="fa-solid fa-chart-pie icon"></i> Optimierung durch Echtzeit-Datenanalysen</h2>
+    <div class="grid">
+      <div>
+        <h3>Effizienzsteigerung:</h3>
+        <ul>
+          <li><i class="fa-solid fa-bell icon"></i> Automatisiertes Notfallmanagement</li>
+          <li><i class="fa-solid fa-toolbox icon"></i> Proaktive Wartung</li>
+          <li><i class="fa-solid fa-user-nurse icon"></i> Ressourcenplanung für Pflegedienste</li>
+          <li><i class="fa-solid fa-user-shield icon"></i> Früherkennung gesundheitlicher Verschlechterungen</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Personalisierte Dienste:</h3>
+        <ul>
+          <li><i class="fa-solid fa-lightbulb icon"></i> Adaptive Umgebungssteuerung & Erinnerungen</li>
+          <li><i class="fa-solid fa-face-smile icon"></i> Verhaltensbasierte Empfehlungen</li>
+          <li><i class="fa-solid fa-hand-holding-medical icon"></i> Präventive Unterstützung</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nutzererfahrung -->
+  <section class="alt">
+    <h2><i class="fa-solid fa-gauge-high icon"></i> Nutzererfahrung: Big Data für bessere Anwendererfahrung</h2>
+    <div class="grid">
+      <div>
+        <h3>Echtzeit-Dashboards:</h3>
+        <ul>
+          <li><i class="fa-solid fa-tablet-screen-button icon"></i> Bewohner: Große, übersichtliche Dashboards mit Icons</li>
+          <li><i class="fa-solid fa-user-group icon"></i> Angehörige/Pflege: Detaillierte, interaktive Web-/Mobile-Dashboards</li>
+          <li><i class="fa-solid fa-map-location-dot icon"></i> Interaktive Karten, Sensorvisualisierung, Bewegungsrouten</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Adaptive & Kontextbezogene Features:</h3>
+        <ul>
+          <li><i class="fa-solid fa-bell icon"></i> Personalisierte Benachrichtigungen</li>
+          <li><i class="fa-solid fa-microphone icon"></i> Sprachsteuerung & flexible Visualisierung</li>
+          <li><i class="fa-solid fa-lightbulb icon"></i> Situationsabhängige Alarme & proaktive Hilfen</li>
+          <li><i class="fa-solid fa-circle-check icon"></i> Minimierung von Fehlalarmen</li>
+        </ul>
+      </div>
+    </div>
+    <div class="highlight">
+      Datenschutz, Ethik, Skalierbarkeit & Interoperabilität sind zentrale Aspekte der Konzeption!
+    </div>
+  </section>
+
+  <!-- Technologiestack -->
+  <section>
+    <h2><i class="fa-solid fa-gears icon"></i> Technologiestack (Beispiele)</h2>
+    <div class="tech-icons">
+      <div>
+        <h4>Edge/Gateway</h4>
+        <p><i class="fa-solid fa-microchip icon"></i> MQTT, Edge-Gateways (z.B. Raspberry Pi), SQLite</p>
+      </div>
+      <div>
+        <h4>Datenaufnahme</h4>
+        <p><i class="fa-brands fa-kickstarter icon"></i> Apache Kafka</p>
+      </div>
+      <div>
+        <h4>Verarbeitung</h4>
+        <p><i class="fa-solid fa-gears icon"></i> Apache Flink, Spark Streaming</p>
+      </div>
+      <div>
+        <h4>Speicherung</h4>
+        <p><i class="fa-solid fa-database icon"></i> MongoDB, Cassandra, DynamoDB, S3, GCS, Snowflake</p>
+      </div>
+      <div>
+        <h4>Ausgabe & Monitoring</h4>
+        <p><i class="fa-solid fa-chart-column icon"></i> Prometheus, Grafana, RESTful APIs, Websockets</p>
+      </div>
+      <div>
+        <h4>Apps</h4>
+        <p><i class="fa-brands fa-react icon"></i> React Native, <i class="fa-brands fa-android icon"></i> Flutter</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IoT-Anwendungsbeispiele -->
+  <section class="alt">
+    <h2><i class="fa-solid fa-microchip icon"></i> IoT-Anwendungs-Ideen für Autonomes Wohnen im Alter</h2>
+    <div class="grid">
+      <div>
+        <h3>I. Sicherheit & Prävention</h3>
+        <ul>
+          <li>Sturzerkennungssysteme</li>
+          <li>Intelligente Rauch-/Gasmelder</li>
+          <li>Herdüberwachung & Türsensorik</li>
+          <li>Intelligente Beleuchtung & Notruf-Systeme</li>
+        </ul>
+        <h3>II. Gesundheits- & Wohlfühldienste</h3>
+        <ul>
+          <li>Medikationsmanagement</li>
+          <li>Wearables zur Gesundheitsüberwachung</li>
+          <li>Luftqualitäts- und Umweltüberwachung</li>
+          <li>KI-gestützte proaktive Unterstützung ("Digitaler Pfleger")</li>
+        </ul>
+      </div>
+      <div>
+        <h3>III. Soziale & kognitive Unterstützung</h3>
+        <ul>
+          <li>Smarte Spiegel/Bildschirme für Kommunikation & Spiele</li>
+          <li>Automatisierte Tagebuchführung & Erinnerungsfunktionen</li>
+        </ul>
+        <h3>IV. Haushaltsassistenz</h3>
+        <ul>
+          <li>Intelligente Haushaltsgeräte mit Warnfunktion</li>
+          <li>Automatisierte Jalousien, Thermostate, Steckdosen</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nachrüstsets -->
+  <section>
+    <h2><i class="fa-solid fa-toolbox icon"></i> Nachrüstsets für Smart Homes mit KI</h2>
+    <div class="grid">
+      <div>
+        <h3>Warum lohnenswert?</h3>
+        <ul>
+          <li>Großer Markt & wachsender Bedarf</li>
+          <li>Kosteneffizient & flexibel</li>
+          <li>Erhalt der Autonomie</li>
+          <li>Entlastung für Angehörige & Pflegekräfte</li>
+          <li>Datenerkenntnisse & Früherkennung</li>
+          <li>Technologische Reife & Erweiterbarkeit</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Bestandteile eines Nachrüst-Sets:</h3>
+        <ul>
+          <li><i class="fa-solid fa-brain icon"></i> Zentrale KI-Einheit / Gateway</li>
+          <li><i class="fa-solid fa-person-walking icon"></i> Sensormodule: Bewegung, Türen, Umwelt, Druck, Wasser</li>
+          <li><i class="fa-solid fa-lightbulb icon"></i> Aktuatoren: smarte Steckdosen, Beleuchtung, Thermostate, Schlösser</li>
+          <li><i class="fa-solid fa-tablet-screen-button icon"></i> Sprachassistenten, Notrufknopf, Tablet/Smartphone-App, digitale Fotorahmen</li>
+          <li><i class="fa-solid fa-cloud icon"></i> Backend-Plattform & Cloud</li>
+          <li><i class="fa-solid fa-shield-halved icon"></i> Datenschutz & Sicherheit</li>
+        </ul>
+      </div>
+    </div>
+    <div class="highlight">
+      Modulares System: Kunden wählen individuell, Installation & Konfiguration möglichst einfach!
+    </div>
+  </section>
+
+  <!-- Big-Data-Lösung & Diskussion -->
+  <section class="alt">
+    <h2><i class="fa-solid fa-chart-bar icon"></i> Big-Data-Lösung: Architektur, Analyse & Reflexion</h2>
+    <div class="grid">
+      <div>
+        <h3>Architektur:</h3>
+        <ul>
+          <li>Edge Computing/Gateways: Vorverarbeitung & Sicherheit</li>
+          <li>API-Integration für Gesundheitsdaten</li>
+          <li>Data Lake, NoSQL für Zeitseriendaten</li>
+          <li>Streaming & Batch Processing (Flink, Spark)</li>
+        </ul>
+        <h3>Analysemethoden:</h3>
+        <ul>
+          <li>Anomalie- & Ereigniserkennung in Echtzeit</li>
+          <li>Batch-Analytik: Trends & prädiktive Analysen</li>
+          <li>Personalisierte Empfehlungen & Visualisierung</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Potenziale:</h3>
+        <ul>
+          <li>Erhöhte Sicherheit & Notfallprävention</li>
+          <li>Steigerung der Lebensqualität & Autonomie</li>
+          <li>Personalisierte Pflege & Unterstützung</li>
+          <li>Effizienzsteigerung für Pflegepersonal/Angehörige</li>
+          <li>Forschung & Entwicklung</li>
+        </ul>
+        <h3>Herausforderungen:</h3>
+        <ul>
+          <li>Datenschutz & Akzeptanz</li>
+          <li>Interoperabilität & Skalierbarkeit</li>
+          <li>Fehlalarme vs. Sensitivität</li>
+          <li>Kosten & Ethik</li>
+        </ul>
+      </div>
+    </div>
+    <div class="highlight">
+      Erfolgreiche Umsetzung erfordert Balance aus Technik, Datenschutz & Ethik!
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <i class="fa-solid fa-users icon"></i> Autonomes Wohnen im Alter – Sicherheit und Lebensqualität durch moderne Technologie & Big Data
+  </footer>
+</body>
+</html>
